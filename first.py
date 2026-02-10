@@ -26,3 +26,9 @@ model.fit(X_train,y_train)
 y_pred = model.predict(X_test)
 print(y_pred)
 print(y_test)
+
+y1 =model.predict([[5000]])
+print(y1)
+
+print(model.coef_)#slope
+print(model.intercept_)#intercept
