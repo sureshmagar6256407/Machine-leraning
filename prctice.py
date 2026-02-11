@@ -1,3 +1,4 @@
+"""
 import pandas as pd 
 from sklearn.model_selection import train_test_split 
 from sklearn.linear_model import LinearRegression 
@@ -26,3 +27,4 @@ print(y_test)
 
 y1 = model.predict([[100]])
 print(y1)
+"""
