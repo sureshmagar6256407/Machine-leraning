@@ -128,3 +128,15 @@ pre = model.predict([[2700]])
 print(pre)
 print(model.coef_)
 print(model.intercept_)
+print('\n')
+pre2= model.predict(X_test)  
+print(pre2)
+# r2 score
+y_pred  = model.predict(X_test)  
+print("R2 scores:" , r2_score(y_test,y_pred))
+
+#12 day predict 
+
+#mse   calculate   
+mse = mean_squared_error(y_test, y_pred)
+print(f"the mse is {mse}")
