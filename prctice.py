@@ -141,3 +141,44 @@ print("R2 scores:" , r2_score(y_test,y_pred))
 mse = mean_squared_error(y_test, y_pred)
 print(f"the mse is {mse}")
 """
+
+
+
+import pandas as pd  
+from sklearn.model_selection  import train_test_split
+from sklearn.linear_model import LinearRegression 
+from sklearn.metrics  import mean_squared_error , r2_score  
+
+data = {
+    "Size_sqft": [500, 800, 1000, 1200, 1500, 1800, 2000, 2200, 2500, 3000],
+    "Price": [5000000, 8000000, 10000000, 12000000, 15000000, 
+              18000000, 20000000, 22000000, 25000000, 30000000]
+}
+
+df = pd.DataFrame(data)
+
+#features and target 
+X  = df[["Size_sqft"]]
+y = df["Price"]
+
+#split data 
+X_train , X_test , y_train , y_test  = train_test_split(X,y,test_size= 0.2 ,random_state= 42)  
+
+#model train  
+model  =LinearRegression() 
+model.fit(X_train , y_train)
+
+#model predict   
+y1 = model.predict(X_test)
+print(y1, '\n')
+print(y_test)
+
+#re score 
+print(f"r2 score of model is : {r2_score(y_test,y1)}")
+
+# y2 = model.predict([[3100]])
+# print(y2)
+
+#mse  
+mse  = mean_squared_error(y_test , y1)
+print(f"the mse is {mse}")
