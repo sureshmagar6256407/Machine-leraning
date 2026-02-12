@@ -40,6 +40,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error,r2_score
+import joblib as jlb
 
 data = {
 
@@ -84,3 +85,6 @@ print(f"the r2 score is {r2_score( y_test,y_pred)}")
 # prediction own values  
 y1 = model.predict([[5000,10]])
 print(y1)
+
+#save model  
+jlb.dump(model,"Firstml.pkl") 
