@@ -48,5 +48,15 @@ data = {
 }
 
 df = pd.DataFrame(data)
-print(df)
+# print(df)
 
+#features and target 
+X = df[["Size_sqft", "Bedrooms"]]
+y= df["Price_k"]
+
+#split   
+X_train , X_test , y_train, y_test =train_test_split(X,y,test_size=0.2, random_state=42)
+# print(X_train)
+# print(X_test)
+# print(y_train)
+print(y_test)
