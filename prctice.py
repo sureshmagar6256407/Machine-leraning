@@ -184,10 +184,10 @@ mse  = mean_squared_error(y_test , y1)
 print(f"the mse is {mse}")
 """
 
-import pandas as pd 
-from sklearn.model_selection import train_test_split  
-from sklearn.linear_model import LinearRegression  
-from sklearn.metrics import  mean_squared_error ,r2_score 
+# import pandas as pd 
+# from sklearn.model_selection import train_test_split  
+# from sklearn.linear_model import LinearRegression  
+# from sklearn.metrics import  mean_squared_error ,r2_score 
 
 
 """
@@ -220,4 +220,35 @@ print(y_test)
 
 #r2 score 
 print(f"the model r2 score is {r2_score(y_test ,  ytrain)}")
+""" 
+
+
+"""
+import pandas as pd 
+from sklearn.model_selection import train_test_split 
+from sklearn.linear_model  import LinearRegression  
+from sklearn.metrics  import mean_squared_error , r2_score 
+
+data  =  { 
+    "day": [1,2,3,4,5,6]  , 
+    "price" :[500,1000,1200,1900,2500,3700]
+}
+df = pd.DataFrame(data)
+#features and target  
+X = df[["day"]]
+y   =df["price"]  
+
+#split data 
+X_train , X_test , y_train, y_test  = train_test_split(X , y , test_size= 0.2 ,random_state= 42)  
+
+#train model 
+model  = LinearRegression()
+model.fit(X_train ,y_train )
+
+#predict  
+y1  = model.predict(X_test) 
+print(y1)  
+print(y_test)
+
+print(f"r2 score is {r2_score(y_test , y1)}")
 """
