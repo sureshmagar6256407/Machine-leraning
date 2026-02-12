@@ -253,8 +253,7 @@ print(y_test)
 print(f"r2 score is {r2_score(y_test , y1)}")
 """
 
-import joblib as jlb  
-loaded_file = jlb.load("Firstml.pkl")
-
-y1 = loaded_file.predict([[6000,4]])
-print(y1)
+# import joblib as jlb  
+# loaded_file = jlb.load("Firstml.pkl")
+# y1 = loaded_file.predict([[6000,4]])
+# print(y1)
