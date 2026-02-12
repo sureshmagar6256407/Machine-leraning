@@ -34,6 +34,8 @@ print(model.coef_)#slope
 print(model.intercept_)#intercept
 """
 
+
+
 import pandas as pd 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -59,4 +61,26 @@ X_train , X_test , y_train, y_test =train_test_split(X,y,test_size=0.2, random_s
 # print(X_train)
 # print(X_test)
 # print(y_train)
+# print(y_test)
+
+#model train 
+model = LinearRegression()
+model.fit(X_train,y_train)
+
+#model prediction  
+y_pred  =  model.predict(X_test)
+print(y_pred)
 print(y_test)
+# print(y)
+# print(y_test)
+# print(model.coef_)
+# print(model.intercept_)
+
+#r2 score  
+mse  = mean_squared_error(y_test,y_pred)
+print(f"the mse is {mse}")
+print(f"the r2 score is {r2_score( y_test,y_pred)}")
+
+# prediction own values  
+y1 = model.predict([[5000,10]])
+print(y1)
