@@ -345,3 +345,34 @@ data  = {
     "age_of_house" : [5,2,10,1,3]    , 
      "price" : [10000000,18000000,12000000,25000000,20000000]
 }
+
+df = pd.DataFrame(data)
+# print(df)
+
+#features and target 
+X  = df[["size_sqft","bedrooms","age_of_house"]]  
+y  = df["price"]  
+
+#split the data    
+X_train , X_test, y_train, y_test  =  train_test_split (X,y , test_size=0.2 , random_state=42)  
+
+#train the model  
+model  = LinearRegression()
+model.fit(X_train , y_train )
+
+
+#predict the value 
+y_pred  = model.predict(X_test)
+print(y_pred)
+print(y_test)
+print()
+print(model.coef_)
+print(model.intercept_)
+
+#  r2 score 
+r2   =r2_score (y_test,y_pred)  
+print(f"the r2 score is {r2}")  
+
+#mse   
+mse  = mean_squared_error(y_test, y_pred )
+print(f"the mse is { mse}")
