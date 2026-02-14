@@ -331,3 +331,17 @@ print(f"the mse is {mse} \n")
 r2  = r2_score(y_test,y1)
 print(f"the r2 score is {r2}")
 """
+
+
+import pandas as pd 
+import joblib as jlb  
+from sklearn.model_selection import train_test_split   
+from sklearn.linear_model import LinearRegression  
+from sklearn.metrics import mean_squared_error , r2_score  
+
+data  = {  
+    "size_sqft" : [1000,1500,1200,2000,1700] ,  
+    "bedrooms":[2,3,2,4,3]   , 
+    "age_of_house" : [5,2,10,1,3]    , 
+     "price" : [10000000,18000000,12000000,25000000,20000000]
+}
