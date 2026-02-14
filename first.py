@@ -137,25 +137,66 @@ print(mse)
 """ 
 
 
-email  = { 
-    101 : {"Email": None, "password" : None}
-}
 
-try : 
-    Email = input("Enter your email :: ")  
-    passwrod  = input("Enter your password")
-    if Email not in email.values() : 
-        if Email.endswith("@gmial.com") and passwrod : 
-            if Email.count("@") == 1 and Email.count('.') == 1 : 
-                email["Email"] = email 
-                email["password"] = passwrod
-            else : 
-                print("@ and . is only one check")
-        else : 
-            print("email must be endswith @gmail.com")
-    else : 
-        print("the id is alredy in the email ")
-    
 
-except Exception as e  : 
-    print(e)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

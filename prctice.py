@@ -258,8 +258,76 @@ print(f"r2 score is {r2_score(y_test , y1)}")
 # y1 = loaded_file.predict([[6000,4]])
 # print(y1)
 
+"""
+import numpy as np  
 import pandas as pd 
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression 
-from sklearn.metrics import mean_squared_error , r2_score  
+from sklearn.model_selection import train_test_split  
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error,r2_score  
+import joblib as jlb 
 
+data = {
+"Experience_Years": [1,2,3,4,5,6,7,8,9,10],
+"Salary_k": [30,35,40,50,55,60,65,70,75,80]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+# features and target   
+X  = df[["Experience_Years"]]
+y = df["Salary_k"]
+
+#split the data 
+X_test , X_train , y_test, y_train  =  train_test_split(X,y,test_size=0.2 , random_state=42)  
+
+#train the model  
+model  = LinearRegression()  
+model.fit(X_train , y_train)  
+
+#predict the value  
+y = model.predict(X_test) 
+print(y) 
+print(y_test)
+
+jlb.dump(model,"suresh.pkl")
+"""
+
+"""
+import pandas as pd 
+from sklearn.model_selection import train_test_split  
+from sklearn.linear_model  import LinearRegression  
+from sklearn.metrics  import mean_squared_error , r2_score  
+import joblib as jlb  
+
+data = { 
+    "Day" : [1,2,3,4,5,6,7,8,9,10] , 
+    "Gold Price" : [300000,298000,305000,290000,310000,295000,320000,300000,330000,310000]
+}
+
+df = pd.DataFrame(data)  
+#features and targe 
+X = df[["Day"]]
+y  = df[["Gold Price"]]
+
+#split the data 
+X_train , X_test , y_train , y_test  = train_test_split (X,y , test_size= 0.2 , random_state= 42)  
+
+#train the model  
+model  = LinearRegression()
+model.fit(X_train,y_train)
+
+#predict the model   
+y1 = model.predict(X_test)  
+print(y1)
+print(y_test)
+print(model.coef_)
+print(model.intercept_)
+print()
+
+mse  =    mean_squared_error(y_test,y1)  
+print(f"the mse is {mse} \n")
+
+r2  = r2_score(y_test,y1)
+print(f"the r2 score is {r2}")
+"""
