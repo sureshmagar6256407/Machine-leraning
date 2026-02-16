@@ -332,7 +332,7 @@ r2  = r2_score(y_test,y1)
 print(f"the r2 score is {r2}")
 """
 
-
+"""
 import pandas as pd 
 import joblib as jlb  
 from sklearn.model_selection import train_test_split   
@@ -376,3 +376,26 @@ print(f"the r2 score is {r2}")
 #mse   
 mse  = mean_squared_error(y_test, y_pred )
 print(f"the mse is { mse}")
+"""
+
+import pandas as pd  
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression  
+from sklearn.metrics  import mean_squared_error ,r2_score  
+import joblib as jlb  
+
+data = {
+"House_ID": [1,2,3,4,5,6,7,8,9,10],
+"Size_sqft": [1200,1500,900,2000,1100,1600,1300,1800,1400,1700],
+"Bedrooms": [3,4,2,4,3,4,3,4,3,4],
+"Bathrooms": [2,3,1,3,2,3,2,3,2,3],
+"Location": ["Downtown","Suburb","Downtown","Suburb","Downtown",
+"Suburb","Downtown","Suburb","Downtown","Suburb"],
+"Price_k": [250,320,180,400,220,350,270,380,300,360]
+}
+df = pd.DataFrame(data)
+print(df)
+
+
+
+
